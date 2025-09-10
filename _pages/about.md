@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: CS Researcher
+subtitle: 
 
 profile:
   align: right
@@ -24,8 +24,10 @@ Put your address / P.O. box / other info right below your picture. You can also 
 
 Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them. -->
 
-I am currently working as a Research Assistant at [PreCog](https://precog.iiit.ac.in/). My domains of interests are broadly Graphs and Trustworthy ML (hoping to some day work on a problem that combines both!). I am currently working on projects in the domains of HCI, Graphs, and Shortcut Learning of LLMs. 
+I am an incoming Masters student at the [Universtiy of Tübingen](https://uni-tuebingen.de/en/) in the Machine Learning program. I was previouslya Research Assistant at [PreCog](https://precog.iiit.ac.in/) under [Prof. Ponnurangam Kumaraguru](https://www.iiit.ac.in/faculty/ponnurangam-kumaraguru/) where I worked on social networks and model evaluations. I graduated with a BTech. in Computer Science from [PES University](https://pes.edu/) where I worked under [Dr. Sudeepa Roy Dey](https://staff.pes.edu/nm1377/) during my undergraduate capstone project. 
 
-I finished my undergrad in BTech. Computer Science from [PES University](https://pes.edu/) where I specialized in Artificial Intelligence and Machine Learning. 
 
-I am currently studying AI safety and its implications and would be interested in working on more projects in the field of Data-centric trustworthy ML.
+
+My domain of interests is *very* broadly Trustworthy ML. More specifically, I am interested in model failures due to OOD, spurious correlations, and adversarial attacks and understand the underlying model representations in these scenarios. 
+
+
