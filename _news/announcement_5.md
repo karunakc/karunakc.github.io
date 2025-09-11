@@ -6,4 +6,4 @@ inline: true
 related_posts: false
 ---
 
-Our [paper](https://openreview.net/forum?id=sYB0Y0hOxi) on model similarity accepted at [SSI-FM] ICLR&apos;25 :stars:
+Our [paper](https://openreview.net/forum?id=sYB0Y0hOxi) on model similarity accepted at [SSI-FM] ICLR&apos;25. 

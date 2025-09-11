@@ -6,4 +6,4 @@ inline: true
 related_posts: false
 ---
 
-Graduated with a B.Tech in Computer Science and Engineering from [PES University](http://pes.edu) :smile:
+Graduated with a B.Tech in Computer Science and Engineering from [PES University](http://pes.edu). 
