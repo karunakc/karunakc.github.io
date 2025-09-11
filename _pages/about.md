@@ -24,10 +24,10 @@ Put your address / P.O. box / other info right below your picture. You can also 
 
 Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them. -->
 
-I am an incoming Masters student at the [Universtiy of Tübingen](https://uni-tuebingen.de/en/) in the Machine Learning program. I was previouslya Research Assistant at [PreCog](https://precog.iiit.ac.in/) under [Prof. Ponnurangam Kumaraguru](https://www.iiit.ac.in/faculty/ponnurangam-kumaraguru/) where I worked on social networks and model evaluations. I graduated with a BTech. in Computer Science from [PES University](https://pes.edu/) where I worked under [Dr. Sudeepa Roy Dey](https://staff.pes.edu/nm1377/) during my undergraduate capstone project. 
+I am an incoming Masters student at the [Universtiy of Tübingen](https://uni-tuebingen.de/en/) in the Machine Learning program. I previously worked as a Research Assistant at [PreCog](https://precog.iiit.ac.in/) under [Prof. Ponnurangam Kumaraguru](https://www.iiit.ac.in/faculty/ponnurangam-kumaraguru/) where my research was focused on social networks and model evaluations. I graduated with a BTech. in Computer Science from [PES University](https://pes.edu/) and had worked under [Dr. Sudeepa Roy Dey](https://staff.pes.edu/nm1377/) during my undergraduate capstone project. 
 
 
 
-My domain of interests is *very* broadly Trustworthy ML. More specifically, I am interested in model failures due to OOD, spurious correlations, and adversarial attacks and understand the underlying model representations in these scenarios. 
+My domain of interests is *very* broadly Trustworthy ML. More specifically, I am interested in model failures due to OOD, spurious correlations, and adversarial attacks and in understanding the underlying model representations in these scenarios. 
 
 
