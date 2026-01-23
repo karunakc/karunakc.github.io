@@ -6,4 +6,4 @@ inline: true
 related_posts: false
 ---
 
-Started my Masters in Machine Learning @ Univeristy of Tübingen!
+Started my Masters in Machine Learning @ [Univeristy of Tübingen](https://uni-tuebingen.de/en/)!
