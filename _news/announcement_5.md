@@ -6,4 +6,4 @@ inline: true
 related_posts: false
 ---
 
-Our [paper](https://openreview.net/forum?id=sYB0Y0hOxi) on model similarity accepted at [SSI-FM](https://sites.google.com/berkeley.edu/selfimprovingfoundationmodels/home) ICLR&apos;25. 
+[Paper](https://openreview.net/forum?id=sYB0Y0hOxi) accept at [SSI-FM](https://sites.google.com/berkeley.edu/selfimprovingfoundationmodels/home) ICLR&apos;25

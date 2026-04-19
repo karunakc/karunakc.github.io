@@ -6,4 +6,4 @@ inline: true
 related_posts: false
 ---
 
-Our [paper](https://openreview.net/forum?id=3Z827FtMNe) on model similarity accepted at ICML&apos;25 as a spotlight poster.
+[Paper](https://openreview.net/forum?id=3Z827FtMNe) accepted at ICML&apos;25 (spotlight poster)

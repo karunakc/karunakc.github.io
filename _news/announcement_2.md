@@ -6,4 +6,4 @@ inline: true
 related_posts: false
 ---
 
-Joined [PreCog](https://precog.iiit.ac.in/) as a Research Assistant under [Prof. Ponnurangam Kumaraguru](https://www.iiit.ac.in/faculty/ponnurangam-kumaraguru/)!
+Joined [PreCog](https://precog.iiit.ac.in/) as a Research Assistant under [Prof. Ponnurangam Kumaraguru](https://www.iiit.ac.in/faculty/ponnurangam-kumaraguru/)
