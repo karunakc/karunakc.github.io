@@ -56,55 +56,36 @@
       
 
       {%- for author in entry.author_array limit: author_array_limit -%}
-        {% assign author_is_self = false %}
+        {%- assign author_is_self = false -%}
         {%- assign author_last_name = author.last | remove: '¶' | remove: '&' | remove: '*' | remove: '†' | remove: '^' -%}
-        {% assign first_match = false %}
-        {% for first in site.scholar.first_name %}
-          {% if author.first contains first or first contains author.first %}
-            {% assign first_match = true %}
-          {% endif %}
-        {% endfor %}
-        {% assign last_match = false %}
-        {% for last in site.scholar.last_name %}
-          {% if author_last_name contains last or last contains author_last_name %}
-            {% assign last_match = true %}
-          {% endif %}
-        {% endfor %}
-        {% if first_match and last_match %}
-          {% assign author_is_self = true %}
-        {% endif %}
-        {% assign coauthor_url = null %}
+        {%- assign first_match = false -%}
+        {%- for first in site.scholar.first_name -%}
+          {%- if author.first contains first or first contains author.first -%}
+            {%- assign first_match = true -%}
+          {%- endif -%}
+        {%- endfor -%}
+        {%- assign last_match = false -%}
+        {%- for last in site.scholar.last_name -%}
+          {%- if author_last_name contains last or last contains author_last_name -%}
+            {%- assign last_match = true -%}
+          {%- endif -%}
+        {%- endfor -%}
+        {%- if first_match and last_match -%}
+          {%- assign author_is_self = true -%}
+        {%- endif -%}
+        {%- assign coauthor_url = null -%}
         {%- assign clean_last_name = author_last_name | downcase | remove_accents -%}
-        {% if site.data.coauthors[clean_last_name] %}
+        {%- if site.data.coauthors[clean_last_name] -%}
           {%- for coauthor in site.data.coauthors[clean_last_name] -%}
-            {% if coauthor.firstname contains author.first %}
+            {%- if coauthor.firstname contains author.first -%}
               {%- assign coauthor_url = coauthor.url -%}
-              {% break %}
-            {% endif %}
-          {% endfor %}
+              {%- break -%}
+            {%- endif -%}
+          {%- endfor -%}
         {%- endif -%}
-
-        {%- if forloop.length > 1 -%}
-          {% if forloop.first == false %},&nbsp;{% endif %}
-          {%- if forloop.last and author_array_limit == author_array_size %}and&nbsp;{% endif -%}
-        {% endif %}
-        {%- if author_is_self -%}
-          <strong>
-            {{- author.first }}
-            {{ author.last -}}
-          </strong>
-        {%- else -%}
-          {%- if coauthor_url -%}
-            <a href="{{coauthor_url}}">
-              {{- author.first }}
-              {{ author.last -}}
-            </a>
-          {%- else -%}
-            {{- author.first }}
-            {{ author.last -}}
-          {% endif %}
-        {%- endif -%}
-      {% endfor %}
+        {%- capture author_name -%}{{ author.first | strip }} {{ author.last | strip }}{%- endcapture -%}
+        {%- if author_is_self -%}<strong>{{- author_name -}}</strong>{%- elsif coauthor_url -%}<a href="{{coauthor_url}}">{{- author_name -}}</a>{%- else -%}{{- author_name -}}{%- endif -%}{%- if forloop.length > 1 and forloop.last == false -%}{%- if forloop.rindex == 2 and author_array_limit == author_array_size -%},&nbsp;and&nbsp;{%- else -%},&nbsp;{%- endif -%}{%- endif -%}
+      {%- endfor -%}
       
     </div>
 
