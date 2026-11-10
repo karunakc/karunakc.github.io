@@ -53,7 +53,6 @@
       {% assign author_array_size = entry.author_array | size %}
 
       {% assign author_array_limit = author_array_size %}
-      
 
       {%- for author in entry.author_array limit: author_array_limit -%}
         {%- assign author_is_self = false -%}
@@ -84,9 +83,17 @@
           {%- endfor -%}
         {%- endif -%}
         {%- capture author_name -%}{{ author.first | strip }} {{ author.last | strip }}{%- endcapture -%}
-        {%- if author_is_self -%}<strong>{{- author_name -}}</strong>{%- elsif coauthor_url -%}<a href="{{coauthor_url}}">{{- author_name -}}</a>{%- else -%}{{- author_name -}}{%- endif -%}{%- if forloop.length > 1 and forloop.last == false -%}{%- if forloop.rindex == 2 and author_array_limit == author_array_size -%},&nbsp;and&nbsp;{%- else -%},&nbsp;{%- endif -%}{%- endif -%}
+        {%- if author_is_self -%}
+          <strong>{{- author_name -}}</strong>
+        {%- elsif coauthor_url -%}
+          <a href="{{coauthor_url}}">{{- author_name -}}</a>
+        {%- else -%}
+          {{- author_name -}}
+        {%- endif -%}
+        {%- if forloop.length > 1 and forloop.last == false -%}
+          {%- if forloop.rindex == 2 and author_array_limit == author_array_size -%},&nbsp;and&nbsp;{%- else -%},&nbsp;{%- endif -%}
+        {%- endif -%}
       {%- endfor -%}
-      
     </div>
 
     <!-- Journal/Book title and date -->

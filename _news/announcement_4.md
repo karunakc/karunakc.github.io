@@ -1,7 +1,7 @@
 ---
 title: paper 2
 layout: post
-date: 2025-4-28 
+date: 2025-4-28
 inline: true
 related_posts: false
 ---

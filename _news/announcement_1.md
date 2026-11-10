@@ -1,7 +1,7 @@
 ---
 title: undergrad
 layout: post
-date: 2024-05-31 
+date: 2024-05-31
 inline: true
 related_posts: false
 ---

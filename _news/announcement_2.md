@@ -1,7 +1,7 @@
 ---
 title: RAship
 layout: post
-date: 2023-10-14 
+date: 2023-10-14
 inline: true
 related_posts: false
 ---
