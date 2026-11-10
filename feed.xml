@@ -1,5 +1,61 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="https://karunakc.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://karunakc.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2026-04-19T17:12:31+00:00</updated><id>https://karunakc.github.io/feed.xml</id><title type="html">blank</title><subtitle>Part-time researcher, full-time student
-</subtitle><entry><title type="html">blogs that I love</title><link href="https://karunakc.github.io/blog/2024/blogs/" rel="alternate" type="text/html" title="blogs that I love" /><published>2024-06-28T00:00:00+00:00</published><updated>2024-06-28T00:00:00+00:00</updated><id>https://karunakc.github.io/blog/2024/blogs</id><content type="html" xml:base="https://karunakc.github.io/blog/2024/blogs/"><![CDATA[<p>Recently I have been reading several cool blogs and several cool people. As one does, I had the idea of curating a these blogs into another blog so that I can come back to them anytime to read them once again and feel like I had the biggest epiphany of all the epiphaies as I read them. I’ll try to categorize them so that you can just jump into sections that you think will be useful for you.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="https://karunakc.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://karunakc.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2026-11-10T12:43:16+00:00</updated><id>https://karunakc.github.io/feed.xml</id><title type="html">blank</title><subtitle>Part-time researcher, full-time student
+</subtitle><entry><title type="html">A Language Model Dump</title><link href="https://karunakc.github.io/blog/2026/blogs/" rel="alternate" type="text/html" title="A Language Model Dump" /><published>2026-01-29T00:00:00+00:00</published><updated>2026-01-29T00:00:00+00:00</updated><id>https://karunakc.github.io/blog/2026/blogs</id><content type="html" xml:base="https://karunakc.github.io/blog/2026/blogs/"><![CDATA[<h1 id="llm-inference">LLM Inference</h1>
+
+<p>https://huggingface.co/blog/Kseniase/inference</p>
+
+<p>In Machine Learning language, the testing stage is applying the trained models on new unseen data. The same process in inference where the trained models are applied on new unseen data by taking the user’s prompt and running it through the trained parameters is referred to as inference.</p>
+
+<p>As the number of parameters in the language increase, the inference time also increases since the user prompts go through the trained parameters to predict one token at a time.</p>
+
+<h2 id="model-optimizations">Model Optimizations</h2>
+
+<ul>
+  <li>Pruning: removing the less significant model parameters which makes it more efficient without the cost of decreased performance.</li>
+  <li>Quantization: Lowering the numerical precison of the model parameters reduces computational overhead.</li>
+  <li>Knowledge Distillation: Training a smaller model (a “student”) to mimic the behavior of a larger, more complex model (a “teacher”) enables compact models suitable for inference.</li>
+</ul>
+
+<h2 id="efficient-attention-mechanisms">Efficient Attention Mechanisms</h2>
+
+<ul>
+  <li>Sparse Attention: Focusing attention on a subset of the input tokens instead of the entire sequence.</li>
+  <li>Linearized Attention: Approximating the attention mechanism with linear complexity.</li>
+  <li>Flash Attention: Optimizing attention computation for faster execution on GPUs.</li>
+</ul>
+
+<h1 id="quantization">Quantization</h1>
+
+<p>https://huggingface.co/docs/optimum/en/concept_guides/quantization
+https://leimao.github.io/article/Neural-Networks-Quantization/
+https://newsletter.maartengrootendorst.com/p/a-visual-guide-to-quantization</p>
+
+<p>Quantization is a technique to reduce the computational and memory costs of running inference by representing the weights and activations with low-precision data types like 8-bit integer (int8) instead of the usual 32-bit floating point (float32).</p>
+
+<p>Reducing the number of bits means the resulting model requires less memory storage, consumes less energy (in theory), and operations like matrix multiplication can be performed much faster with integer arithmetic.</p>
+
+<p>The two most common quantization cases are float32 -&gt; float16 and float32 -&gt; int8.</p>
+
+<p>Quantization to float16</p>
+
+<p>Performing quantization to go from float32 to float16 is quite straightforward since both data types follow the same representation scheme. The questions to ask yourself when quantizing an operation to float16 are:</p>
+
+<p>Does my operation have a float16 implementation?
+Does my hardware support float16? For instance, Intel CPUs have been supporting float16 as a storage type, but computation is done after converting to float32. Full support will come in Cooper Lake and Sapphire Rapids.
+Is my operation sensitive to lower precision? For instance the value of epsilon in LayerNorm is usually very small (~ 1e-12), but the smallest representable value in float16 is ~ 6e-5, this can cause NaN issues. The same applies for big values.</p>
+
+<p><img src="image-1.png" alt="alt text" /></p>
+
+<p><img src="image-2.png" alt="alt text" /></p>
+
+<p>Quantization error - the difference in the original representation vs the dequantized representation. Since quantization maps few lesser occuring floating point values to the same integer, decoupling makes it such that it is no longer distinguishable. the difference between the original and the new value is the dequantization error</p>
+
+<p>Post Training Quantization (PTQ)</p>
+
+<p>Post Training Quantization (PTQ) is a technique to reduce the required computational resources for inference while still preserving the accuracy of your model by mapping the traditional FP32 activation space to a reduced INT8 space. TensorRT uses a calibration step which executes your model with sample data from the target domain and track the activations in FP32 to calibrate a mapping to INT8 that minimizes the information loss between FP32 inference and INT8 inference.</p>
+
+<p>https://medium.com/better-ml/quantization-aware-training-qat-vs-post-training-quantization-ptq-cd3244f43d9a</p>
+
+<p>The architectural vs training data effects on generalization and memorization</p>]]></content><author><name></name></author><category term="reading" /><category term="LLM" /><summary type="html"><![CDATA[LLM Inference]]></summary></entry><entry><title type="html">blogs that I love</title><link href="https://karunakc.github.io/blog/2024/blogs/" rel="alternate" type="text/html" title="blogs that I love" /><published>2024-06-28T00:00:00+00:00</published><updated>2024-06-28T00:00:00+00:00</updated><id>https://karunakc.github.io/blog/2024/blogs</id><content type="html" xml:base="https://karunakc.github.io/blog/2024/blogs/"><![CDATA[<p>Recently I have been reading several cool blogs and several cool people. As one does, I had the idea of curating a these blogs into another blog so that I can come back to them anytime to read them once again and feel like I had the biggest epiphany of all the epiphaies as I read them. I’ll try to categorize them so that you can just jump into sections that you think will be useful for you.</p>
 
 <h1 id="research">Research</h1>
 
